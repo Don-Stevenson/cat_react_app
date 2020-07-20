@@ -7,7 +7,7 @@ function App() {
   // setting the state object's initial values
   const [state, setState] = useState({
     search: "",
-    results: []
+    results: ""
   })
   // the url for the cat info
   const url = "https://api.thecatapi.com/v1/breeds/search?q="
@@ -27,10 +27,11 @@ function App() {
   async function search(e) {
     try {
       if (e.key === "Enter") {
-        const data = await axios(url + state.search);
-        let results = data.data.Search;
+        const results = await axios(url + state.search);
+        let description = results.data['0'].description
+        //console.log("description is:", description)
         setState(prevState => {
-          return { ...prevState, results: results };
+          return { ...prevState, results: description };
         });
       }
     } catch (err) {
@@ -45,7 +46,7 @@ function App() {
       </header>
       <main>
         {
-          //handle the search results, opening the pop up and closing the popup upon selection
+          //handle the search 
         }
         <Search handleInput={handleInput} search={search} />
 

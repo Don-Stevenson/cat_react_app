@@ -1,20 +1,17 @@
 import React from "react";
 import Result from "./Result";
 
-const Results = ({ results })=> {
+const Results = ({ results }) => {
   return (
     <section className="results">
-      {results ? (
-        results.map(result => (
-          <Result key={result.imdbID} result={result} />
-        ))
-      ) : (
-        <header>
-          <h2> No Results! Please enter another cat name. </h2>
-        </header>
-      )}
+      {
+         <Result
+          key={results}
+          result={results}
+        />
+      }
     </section>
   );
-}
+};
 
 export default Results;
