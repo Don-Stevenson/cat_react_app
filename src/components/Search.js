@@ -5,7 +5,7 @@ const Search = ({ handleInput, search }) => {
 		<section className="searchbox-wrap">
 			<input 
 				type="text" 
-				placeholder="Search for a movie..." 
+				placeholder="Search for a cat..." 
 				className="searchbox" 
 				onChange={handleInput}
 				onKeyPress={search}
