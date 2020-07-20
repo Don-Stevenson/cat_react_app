@@ -28,7 +28,7 @@ function App() {
     try {
       if (e.key === "Enter") {
         const results = await axios(url + state.search);
-        if (results.data.length === 0) {
+        if (!results.data.length) {
           setState(prevState => {
             return {
               ...prevState,
